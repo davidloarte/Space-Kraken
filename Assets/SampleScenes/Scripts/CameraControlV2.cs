@@ -18,7 +18,7 @@ public class CameraControlV2 : MonoBehaviour
     void LateUpdate()
     {
         //descarto poner el eje z porque no se puede mover el mouse en el
-        distancia = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * 2, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * 2, Vector3.forward) * distancia;
+        distancia = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * 2, Vector3.up) /** Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * 2, Vector3.forward) */* distancia;
         //distancia = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * 2, Vector3.forward) * distancia;
         //distancia = Quaternion.AngleAxis(Input.GetAxis("Mouse Z") * 2, Vector3.right) * distancia;
 
