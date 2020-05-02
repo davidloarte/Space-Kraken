@@ -8,6 +8,7 @@ public class ShipMovementV2 : MonoBehaviour
     public float velocidad;
     public float velocidadMax;
     public GameObject referencia;
+    public float velocidadRotar = 0.75f;
 
     public float velocidadRotacionHorizontal = 1f;
     public float velocidadRotacionVertical = 1f;
@@ -42,9 +43,14 @@ public class ShipMovementV2 : MonoBehaviour
     public void rotar()
     {
 
-        float h = velocidadRotacionHorizontal * Input.GetAxis("Mouse X");
-        float v = velocidadRotacionVertical * -(Input.GetAxis("Mouse Y"));
+        float h = velocidadRotacionHorizontal * Input.GetAxis("Mouse X") * 2;
+        float v = velocidadRotacionVertical * - (Input.GetAxis("Mouse Y") * 2);
         transform.Rotate(v, h, 0);
+
+        if (Input.GetKey(KeyCode.Q))
+            transform.Rotate(new Vector3(0, 0, velocidadRotar));
+        if (Input.GetKey(KeyCode.E))
+            transform.Rotate(new Vector3(0, 0, -velocidadRotar));
 
         //if (Input.GetAxis("Mouse X") > 0) 
         //{ 
