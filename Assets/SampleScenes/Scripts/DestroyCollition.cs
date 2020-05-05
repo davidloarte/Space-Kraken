@@ -4,26 +4,30 @@ using UnityEngine;
 
 public class DestroyCollition : MonoBehaviour
 {
-    public GameObject ObjetoADestruir;
-    public Collider ObjetoSensible;
-
-    private void DetectaColision (Collider colision)
-    {
-        if (colision.gameObject.tag == "any" || colision.gameObject.tag == "asteroide")
-        {
-            Destroy(ObjetoADestruir);
-        }
-    }
-
-
     void Start()
     {
+    ;
+        
+    }
+    void Update()
+    {
+     
         
     }
 
-    void Update()
+    // Funcion que detecta las colisiones en los objetos
+    private void OnCollisionEnter(Collision collision)
     {
-        DetectaColision(ObjetoSensible);
-        
+        // Destruye el disparo
+        Destroy(gameObject);
+
+        // Dos maneras diferentes de decir para el mismo tag
+        if (collision.gameObject.tag.Equals ("asteroide1") || collision.gameObject.tag == "asteroide")
+        {
+            //Si detecta la colision con un objeto de ese tio elimina el objeto y el disparo
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
     }
 }
