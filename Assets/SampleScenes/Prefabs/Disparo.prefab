@@ -124,6 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonidoExplosion: {fileID: 8300000, guid: f0e6376663029484ebe23aea7c1b7051, type: 3}
   volumen: 100000
+  efectoExplosion: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 3}
 --- !u!122 &58718343602880815
 Halo:
   m_ObjectHideFlags: 0
