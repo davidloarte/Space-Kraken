@@ -119,6 +119,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
       propertyPath: m_Name
       value: Asteroid 3 (1)
@@ -167,10 +171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
 --- !u!1 &153279750
@@ -196,13 +196,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153279750}
-  m_LocalRotation: {x: 0.16946597, y: -0, z: -0, w: 0.9855361}
-  m_LocalPosition: {x: 0, y: 8.62, z: -14.94}
+  m_LocalRotation: {x: 0.08886888, y: -0, z: -0, w: 0.9960433}
+  m_LocalPosition: {x: 0, y: 7.51, z: -15.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 711353995}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 19.514002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.1970005, y: 0, z: 0}
 --- !u!1 &309910246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9,
@@ -635,8 +635,10 @@ MonoBehaviour:
     type: 3}
   lanzador1: {fileID: 1224358973}
   lanzador2: {fileID: 1649267686}
-  velocidadDisparo: 40
+  velocidadDisparo: 100
   tiempoDisparo: 1
+  sonidoDisparo: {fileID: 8300000, guid: 5dd8df5e2d3e5a5428e42eb45edae217, type: 3}
+  volumen: 300
 --- !u!1 &711064241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1381,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
       propertyPath: m_Name
       value: Asteroid 3
@@ -1430,10 +1436,6 @@ PrefabInstance:
     - target: {fileID: 469044, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
@@ -6274,9 +6276,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7667423b04afd8641926a411d71e285c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.02
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

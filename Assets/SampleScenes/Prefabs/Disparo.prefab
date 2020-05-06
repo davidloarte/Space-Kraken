@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b1dd305662523449326c228dd7e179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjetoADestruir: {fileID: 6833499795010612258}
-  ObjetoSensible: {fileID: 3966823882668511252}
+  sonidoExplosion: {fileID: 8300000, guid: f0e6376663029484ebe23aea7c1b7051, type: 3}
+  volumen: 100000
 --- !u!122 &58718343602880815
 Halo:
   m_ObjectHideFlags: 0
@@ -135,4 +135,4 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4278190335
-  m_Size: 0.3
+  m_Size: 0.4

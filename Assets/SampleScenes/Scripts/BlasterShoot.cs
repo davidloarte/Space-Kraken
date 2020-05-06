@@ -11,10 +11,13 @@ public class BlasterShoot : MonoBehaviour
     public float tiempoDisparo;
     private float inicioDisparar;
 
-    
+    public AudioClip sonidoDisparo;
+    public float volumen;
+    private Transform posicionSonido;
+
     void Start()
     {
-        
+        posicionSonido = transform;
     }
 
     void Update()
@@ -35,6 +38,13 @@ public class BlasterShoot : MonoBehaviour
             //Hacemos lo mismo para el otro punto de disparo
             disparoPrefabInstanciado2 = Instantiate(disparoPrefab, lanzador2.position, Quaternion.identity) as Rigidbody;
             disparoPrefabInstanciado2.AddForce(lanzador2.forward * 100 * velocidadDisparo);
+
+            //Destroy(disparoPrefabInstanciado1, 10);
+            //Destroy(disparoPrefabInstanciado2, 10);
+
+            // Hacemos que suene el disparo
+            AudioSource.PlayClipAtPoint(sonidoDisparo, posicionSonido.position, volumen);
         }
+        
     }
 }

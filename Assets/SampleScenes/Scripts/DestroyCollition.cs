@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DestroyCollition : MonoBehaviour
 {
+
+    public AudioClip sonidoExplosion;
+    public float volumen;
+    private Transform posicionSonido;
+
     void Start()
     {
-    ;
-        
+        posicionSonido = transform;
     }
     void Update()
     {
@@ -27,6 +31,9 @@ public class DestroyCollition : MonoBehaviour
             //Si detecta la colision con un objeto de ese tio elimina el objeto y el disparo
             Destroy(collision.gameObject);
             Destroy(gameObject);
+
+            // Hacemos que suene la explosion
+            AudioSource.PlayClipAtPoint(sonidoExplosion, posicionSonido.position, volumen * 10000000);
         }
 
     }
