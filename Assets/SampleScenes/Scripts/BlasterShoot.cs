@@ -44,6 +44,8 @@ public class BlasterShoot : MonoBehaviour
 
             // Hacemos que suene el disparo
             AudioSource.PlayClipAtPoint(sonidoDisparo, posicionSonido.position, volumen);
+
+            //Destroy(disparoPrefab, 5);
         }
         
     }

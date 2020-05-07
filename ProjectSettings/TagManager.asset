@@ -6,6 +6,8 @@ TagManager:
   tags:
   - any
   - asteroide
+  - bandera
+  - base
   layers:
   - Default
   - TransparentFX

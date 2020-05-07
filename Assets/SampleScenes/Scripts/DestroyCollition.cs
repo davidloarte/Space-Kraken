@@ -9,16 +9,16 @@ public class DestroyCollition : MonoBehaviour
     private Transform posicionSonido;
 
     public GameObject efectoExplosion;
-
     private bool haExplotado = false;
+    GameObject efectoExplosion2;
+
     void Start()
     {
         posicionSonido = transform;
     }
     void Update()
     {
-     
-        
+
     }
 
     // Funcion que detecta las colisiones en los objetos
@@ -34,18 +34,21 @@ public class DestroyCollition : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
 
-            //Instanciamos el efecto con nuestro efecto, donde y su rotacion
+            //Instanciamos el efecto con nuestro efecto, donde y su rotacion            
             Explotar();
             haExplotado = true;
 
             // Hacemos que suene la explosion
             AudioSource.PlayClipAtPoint(sonidoExplosion, posicionSonido.position, volumen * 10000000);
         }
-
     }
 
     public void Explotar()
     {
-        Instantiate(efectoExplosion, transform.position, transform.rotation);
+        //Instantiate(efectoExplosion, transform.position, transform.rotation);
+        efectoExplosion2 = Instantiate(efectoExplosion, transform.position, transform.rotation);
+        efectoExplosion2.SetActive(true);
+        Destroy(efectoExplosion2, 3);
     }
 }
+ 
