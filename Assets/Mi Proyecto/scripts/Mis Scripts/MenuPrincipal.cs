@@ -37,4 +37,9 @@ public class MenuPrincipal : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Inicio()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

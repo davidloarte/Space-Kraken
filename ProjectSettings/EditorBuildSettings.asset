@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mi Proyecto/scens/Main Scene.unity
     guid: 1de0517d2c6c30a43bb111dc7434af0f
+  - enabled: 1
+    path: Assets/Mi Proyecto/scens/Ganar.unity
+    guid: 15b85f0e3d47c714b8da84d78efc3a17
   m_configObjects: {}

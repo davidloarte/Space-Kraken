@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickCoin : MonoBehaviour
 {
@@ -37,7 +38,8 @@ public class PickCoin : MonoBehaviour
 
         if (collision.gameObject.tag == "base" && contador > 0)
         {
-            Debug.Log("has ganado");
+            //Debug.Log("has ganado");
+            SceneManager.LoadScene("Ganar");
         }
     }
 }
