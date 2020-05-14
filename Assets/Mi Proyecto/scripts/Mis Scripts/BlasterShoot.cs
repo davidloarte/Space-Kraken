@@ -7,6 +7,8 @@ public class BlasterShoot : MonoBehaviour
     public Rigidbody disparoPrefab;
     public Transform lanzador1;
     public Transform lanzador2;
+    public Transform lanzador3;
+    public Transform lanzador4;
     public float velocidadDisparo;
     public float tiempoDisparo;
     private float inicioDisparar;
@@ -29,23 +31,32 @@ public class BlasterShoot : MonoBehaviour
             inicioDisparar = Time.time + tiempoDisparo;
             Rigidbody disparoPrefabInstanciado1;
             Rigidbody disparoPrefabInstanciado2;
+            Rigidbody disparoPrefabInstanciado3;
+            Rigidbody disparoPrefabInstanciado4;
 
             // aqui instanciamos el disparo, el que queremos como disparo, su posicion, y su lugar y lo instanciamos como Rigidbody para poder hacer colisiones con el
             disparoPrefabInstanciado1 = Instantiate(disparoPrefab, lanzador1.position, Quaternion.identity) as Rigidbody;
             // ahora le añadimos el movimiento
             disparoPrefabInstanciado1.AddForce(lanzador1.forward * 100 *velocidadDisparo);
 
-            //Hacemos lo mismo para el otro punto de disparo
+            //Hacemos lo mismo para los otros puntos de disparo
             disparoPrefabInstanciado2 = Instantiate(disparoPrefab, lanzador2.position, Quaternion.identity) as Rigidbody;
             disparoPrefabInstanciado2.AddForce(lanzador2.forward * 100 * velocidadDisparo);
+
+            disparoPrefabInstanciado3 = Instantiate(disparoPrefab, lanzador3.position, Quaternion.identity) as Rigidbody;
+            disparoPrefabInstanciado3.AddForce(lanzador3.forward * 100 * velocidadDisparo);
+
+            disparoPrefabInstanciado4 = Instantiate(disparoPrefab, lanzador4.position, Quaternion.identity) as Rigidbody;
+            disparoPrefabInstanciado4.AddForce(lanzador4.forward * 100 * velocidadDisparo);
 
             //Destroy(disparoPrefabInstanciado1, 10);
             //Destroy(disparoPrefabInstanciado2, 10);
 
             // Hacemos que suene el disparo
-            AudioSource.PlayClipAtPoint(sonidoDisparo, posicionSonido.position, volumen);
+            AudioSource.PlayClipAtPoint(sonidoDisparo, posicionSonido.position, volumen * 10);
 
             //Destroy(disparoPrefab, 5);
+            //pruebap
         }
         
     }

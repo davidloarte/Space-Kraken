@@ -628,7 +628,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -22, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840340611
 MonoBehaviour:
@@ -670,7 +670,7 @@ MonoBehaviour:
     vuelo real pero debido a las carencias causadas por la guerra contra el imperio
     Gatlic, tendr\xE1s que conformarte con m\xE1s simulaciones.\nPor ello puedes repetir
     la simulaci\xF3n para mejorar tus resultados o acceder a otro terminal para continuar
-    tu entrenamiento hasta ma\xF1ana que embarcaras en el primer transbordador.\nMucha
+    tu entrenamiento hasta ma\xF1ana que embarcaras en el primer transbordador.\n\nMucha
     suerte cadete.\n"
 --- !u!222 &840340612
 CanvasRenderer:

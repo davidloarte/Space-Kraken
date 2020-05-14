@@ -147,7 +147,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164433896
 MonoBehaviour:
@@ -338,7 +338,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675602262
 MonoBehaviour:
@@ -374,8 +374,8 @@ MonoBehaviour:
   m_Text: "Has fracasado cadete.\nEsto ah\xED fuera, en el basto vacio hubiera sido
     tu fin.\nEl nivel de exigencia de la flota de la U.N.S.C. es muy alto y debido
     a no poder superar la simulaci\xF3n has sido calificado como no apto para pilotar
-    una de nuestras naves.\nPuedes tratar de repetir t\xFA simulaci\xF3n para que
-    revisemos tu calificaci\xF3n.\nValoramos tanto la perseverancia como el talento.\nRecuerda
+    una de nuestras naves.\nPuedes tratar de repetir tu simulaci\xF3n para que revisemos
+    tu calificaci\xF3n.\nValoramos tanto la perseverancia como el talento.\nRecuerda
     que la pr\xE1ctica hace la perfecci\xF3n."
 --- !u!222 &675602263
 CanvasRenderer:

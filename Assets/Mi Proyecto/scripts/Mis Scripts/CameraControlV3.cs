@@ -12,6 +12,8 @@ public class CameraControlV3 : MonoBehaviour
     public bool seguirRotacion;
     public float acercarRotacion = 0.05f;
 
+    public bool invertirEjes = false;
+
     void Start()
     {
         
@@ -19,15 +21,31 @@ public class CameraControlV3 : MonoBehaviour
 
     void Update()
     {
-        if (seguirPosicion)
+        if (!invertirEjes)
         {
-            transform.position = Vector3.Lerp(transform.position, jugador.transform.position, acercartoPosicion);
-        }
+            if (seguirPosicion)
+            {
+                transform.position = Vector3.Lerp(transform.position, jugador.transform.position, acercartoPosicion);
+            }
 
-        if (seguirRotacion)
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, jugador.transform.rotation, acercarRotacion);
+            if (seguirRotacion)
+            {
+                transform.rotation = Quaternion.Lerp(transform.rotation, jugador.transform.rotation, acercarRotacion);
+            }
         }
+        else
+        {
+            if (seguirPosicion)
+            {
+                transform.position = Vector3.Lerp(transform.position, jugador.transform.position, acercartoPosicion);
+            }
+
+            if (seguirRotacion)
+            {
+                transform.rotation = Quaternion.Lerp(transform.rotation, jugador.transform.rotation, acercarRotacion);
+            }
+        }
+        
     }
 
 }

@@ -13,6 +13,7 @@ public class ShipMovementV2 : MonoBehaviour
     public float velocidadRotacionHorizontal = 1f;
     public float velocidadRotacionVertical = 1f;
 
+    public bool InvertirEjes = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,9 +22,22 @@ public class ShipMovementV2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float moverHorizontal = Input.GetAxis("Horizontal");
-        float moverVertical = Input.GetAxis("Vertical");
-        
+        float moverHorizontal = 0;
+        float moverVertical = 0;
+
+        if (!InvertirEjes) 
+        {
+            moverHorizontal = Input.GetAxis("Horizontal");
+            moverVertical = Input.GetAxis("Vertical");
+        }
+        if (InvertirEjes)
+        {
+            moverHorizontal = -Input.GetAxis("Horizontal");
+            moverVertical = -Input.GetAxis("Vertical");
+        }
+
+
+
         if (rb.velocity.magnitude > velocidadMax)
         {
             rb.velocity = rb.velocity.normalized * velocidadMax;
@@ -42,15 +56,37 @@ public class ShipMovementV2 : MonoBehaviour
 
     public void rotar()
     {
+        float h = 0;
+        float v = 0;
 
-        float h = velocidadRotacionHorizontal * Input.GetAxis("Mouse X") * 2;
-        float v = velocidadRotacionVertical * - (Input.GetAxis("Mouse Y") * 2);
+        if (InvertirEjes)
+        {
+            h = velocidadRotacionHorizontal * Input.GetAxis("Mouse X") * 2;
+            v = velocidadRotacionVertical * (Input.GetAxis("Mouse Y") * 2);
+        }
+       if (!InvertirEjes)
+        {
+            h = velocidadRotacionHorizontal * Input.GetAxis("Mouse X") * 2;
+            v = velocidadRotacionVertical * -(Input.GetAxis("Mouse Y") * 2);
+        }
+
         transform.Rotate(v, h, 0);
+        
+        if (!InvertirEjes) {
+            if (Input.GetKey(KeyCode.Q))
+                transform.Rotate(new Vector3(0, 0, velocidadRotar));
+            if (Input.GetKey(KeyCode.E))
+                transform.Rotate(new Vector3(0, 0, -velocidadRotar));
+        }
 
-        if (Input.GetKey(KeyCode.Q))
-            transform.Rotate(new Vector3(0, 0, velocidadRotar));
-        if (Input.GetKey(KeyCode.E))
-            transform.Rotate(new Vector3(0, 0, -velocidadRotar));
+        if (InvertirEjes)
+        {
+            if (Input.GetKey(KeyCode.E))
+                transform.Rotate(new Vector3(0, 0, velocidadRotar));
+            if (Input.GetKey(KeyCode.Q))
+                transform.Rotate(new Vector3(0, 0, -velocidadRotar));
+        }
+        
 
         //if (Input.GetAxis("Mouse X") > 0) 
         //{ 

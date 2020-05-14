@@ -33,7 +33,7 @@ public class PickCoin : MonoBehaviour
             Physics.IgnoreCollision(nave.GetComponent<Collider>(), bandera.GetComponent<Collider>());
             Destroy(collision.gameObject);
             contador++;
-            AudioSource.PlayClipAtPoint(sonidoMoneda, posicionSonido.position, volumen * 10000000);
+            AudioSource.PlayClipAtPoint(sonidoMoneda, posicionSonido.position, volumen * 1);
         }
 
         if (collision.gameObject.tag == "base" && contador > 0)
