@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class CameraControlV3 : MonoBehaviour
 {
 
@@ -14,6 +14,7 @@ public class CameraControlV3 : MonoBehaviour
 
     public bool invertirEjes = false;
 
+    public float cuentaAtras = 3f;
     void Start()
     {
         
@@ -44,8 +45,26 @@ public class CameraControlV3 : MonoBehaviour
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, jugador.transform.rotation, acercarRotacion);
             }
+
+            if (!jugador)
+            {
+                Debug.Log("llego");
+                cuentaAtras -= Time.deltaTime;
+
+                if (cuentaAtras < 0)
+                {
+                    SceneManager.LoadScene("Failed");
+                }
+
+                //StartCoroutine(Cuenta());
+            }
         }
-        
     }
+    //IEnumerator Cuenta()
+    //{
+    //    yield return new WaitForSeconds(cuentaAtras);
+    //    SceneManager.LoadScene("Failed");
+    //}
+    
 
 }
