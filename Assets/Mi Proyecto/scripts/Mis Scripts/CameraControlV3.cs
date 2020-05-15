@@ -6,6 +6,9 @@ public class CameraControlV3 : MonoBehaviour
 {
 
     public GameObject jugador;
+    public GameObject Camara2;
+
+    public bool cambiado = false;
 
     public bool seguirPosicion;
     public float acercartoPosicion = 0.05f;
@@ -14,7 +17,7 @@ public class CameraControlV3 : MonoBehaviour
 
     public bool invertirEjes = false;
 
-    public float cuentaAtras = 3f;
+    private int contador = 0;
     void Start()
     {
         
@@ -22,49 +25,80 @@ public class CameraControlV3 : MonoBehaviour
 
     void Update()
     {
-        if (!invertirEjes)
+        if (Input.GetKey(KeyCode.V))
         {
-            if (seguirPosicion)
-            {
-                transform.position = Vector3.Lerp(transform.position, jugador.transform.position, acercartoPosicion);
-            }
-
-            if (seguirRotacion)
-            {
-                transform.rotation = Quaternion.Lerp(transform.rotation, jugador.transform.rotation, acercarRotacion);
-            }
+            if (contador % 2 == 0)
+                cambiado = true;
+            else
+                cambiado = false;
+            contador++;
         }
-        else
+
+        if (cambiado == false)
         {
-            if (seguirPosicion)
-            {
-                transform.position = Vector3.Lerp(transform.position, jugador.transform.position, acercartoPosicion);
-            }
+            acercartoPosicion = 0.05f;
 
-            if (seguirRotacion)
-            {
-                transform.rotation = Quaternion.Lerp(transform.rotation, jugador.transform.rotation, acercarRotacion);
-            }
+            acercarRotacion = 0.05f;
 
-            if (!jugador)
+            if (!invertirEjes)
             {
-                Debug.Log("llego");
-                cuentaAtras -= Time.deltaTime;
-
-                if (cuentaAtras < 0)
+                if (seguirPosicion)
                 {
-                    SceneManager.LoadScene("Failed");
+                    transform.position = Vector3.Lerp(transform.position, jugador.transform.position, acercartoPosicion);
                 }
 
-                //StartCoroutine(Cuenta());
+                if (seguirRotacion)
+                {
+                    transform.rotation = Quaternion.Lerp(transform.rotation, jugador.transform.rotation, acercarRotacion);
+                }
+            }
+            else
+            {
+                if (seguirPosicion)
+                {
+                    transform.position = Vector3.Lerp(transform.position, jugador.transform.position, acercartoPosicion);
+                }
+
+                if (seguirRotacion)
+                {
+                    transform.rotation = Quaternion.Lerp(transform.rotation, jugador.transform.rotation, acercarRotacion);
+                }
             }
         }
-    }
-    //IEnumerator Cuenta()
-    //{
-    //    yield return new WaitForSeconds(cuentaAtras);
-    //    SceneManager.LoadScene("Failed");
-    //}
-    
 
+        if (cambiado == true)
+        {
+            acercartoPosicion = 1.0f;
+
+            acercarRotacion = 1.0f;
+
+            if (!invertirEjes)
+            {
+                if (seguirPosicion)
+                {
+                    transform.position = Vector3.Lerp(transform.position, Camara2.transform.position, acercartoPosicion);
+                }
+
+                if (seguirRotacion)
+                {
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Camara2.transform.rotation, acercarRotacion);
+                }
+            }
+            else
+            {
+                if (seguirPosicion)
+                {
+                    transform.position = Vector3.Lerp(transform.position, Camara2.transform.position, acercartoPosicion);
+                }
+
+                if (seguirRotacion)
+                {
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Camara2.transform.rotation, acercarRotacion);
+                }
+
+            }
+        }
+
+    }
+   
 }

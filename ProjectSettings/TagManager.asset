@@ -8,6 +8,8 @@ TagManager:
   - asteroide
   - bandera
   - base
+  - Enemy
+  - naveCapital
   layers:
   - Default
   - TransparentFX

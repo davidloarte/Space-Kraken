@@ -41,6 +41,12 @@ public class DestroyCollition : MonoBehaviour
             // Hacemos que suene la explosion
             AudioSource.PlayClipAtPoint(sonidoExplosion, posicionSonido.position, volumen * 10000000);
         }
+
+        if (collision.gameObject.tag.Equals("any"))
+        {
+
+        }
+
     }
 
     public void Explotar()

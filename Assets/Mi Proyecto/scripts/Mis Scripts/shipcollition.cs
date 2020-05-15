@@ -42,7 +42,8 @@ public class shipcollition : MonoBehaviour
         if ((collision.gameObject.tag.Equals("asteroide1") || collision.gameObject.tag == "asteroide") && haExplotado == false || collision.gameObject.tag == ("any"))
         {
             //Si detecta la colision con un objeto de ese tio elimina el objeto y el disparo
-            Destroy(collision.gameObject);
+            if (collision.gameObject.tag != "naveCapital")
+                Destroy(collision.gameObject);
             Destroy(gameObject);
 
 
