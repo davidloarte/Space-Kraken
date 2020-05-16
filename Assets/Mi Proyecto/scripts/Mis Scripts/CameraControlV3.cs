@@ -11,13 +11,14 @@ public class CameraControlV3 : MonoBehaviour
     public bool cambiado = false;
 
     public bool seguirPosicion;
-    public float acercartoPosicion = 0.05f;
+    public float acercartoPosicion = 0.15f;
     public bool seguirRotacion;
-    public float acercarRotacion = 0.05f;
+    public float acercarRotacion = 0.15f;
 
     public bool invertirEjes = false;
 
     private int contador = 0;
+    private float tiempoEspera = 0.5f;
     void Start()
     {
         
@@ -25,20 +26,23 @@ public class CameraControlV3 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.V))
+        tiempoEspera = tiempoEspera - Time.deltaTime;
+        if (Input.GetKey(KeyCode.V) && tiempoEspera <= 0)
         {
             if (contador % 2 == 0)
                 cambiado = true;
             else
                 cambiado = false;
+
             contador++;
+            tiempoEspera = 0.5f;
         }
 
         if (cambiado == false)
         {
-            acercartoPosicion = 0.05f;
+            acercartoPosicion = 0.15f;
 
-            acercarRotacion = 0.05f;
+            acercarRotacion = 0.15f;
 
             if (!invertirEjes)
             {
