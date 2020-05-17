@@ -38,12 +38,13 @@ public class MovimientoIndividualAsteroide : MonoBehaviour
         float x = Mathf.Cos(contador) * ancho;
         //float Y = Mathf.Sin(contador) * alto;
         float z = Mathf.Sin(contador) * largo;
+        //float z = 0;
 
         Aux = transform.position;
 
         Aux.x += x;
         //Aux.y += Y;
-        Aux.x += z;
+        Aux.z += z;
 
         transform.position = Aux;
 

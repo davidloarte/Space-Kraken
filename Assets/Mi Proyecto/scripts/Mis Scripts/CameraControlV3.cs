@@ -24,7 +24,7 @@ public class CameraControlV3 : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
         tiempoEspera = tiempoEspera - Time.deltaTime;
         if (Input.GetKey(KeyCode.V) && tiempoEspera <= 0)

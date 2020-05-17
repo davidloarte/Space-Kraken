@@ -166,6 +166,8 @@ GameObject:
   - component: {fileID: 7786388175512335641}
   - component: {fileID: 7786388175505284003}
   - component: {fileID: 472024342085113128}
+  - component: {fileID: 114137403866176982}
+  - component: {fileID: 114045175437741926}
   m_Layer: 0
   m_Name: asteroide2
   m_TagString: asteroide
@@ -182,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 7786388175515497869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 904.82, y: 194.06, z: 2014.7122}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 7786388175515285345}
   m_Father: {fileID: 0}
@@ -231,6 +233,34 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!114 &114137403866176982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786388175515497869}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dca25888668f184aae0ae2a3a83e038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ejeX: 1
+  ejeY: 0
+  ejeZ: 0
+  agujasDeReloj: 1
+--- !u!114 &114045175437741926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786388175515497869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1724125ba2a3be42a4d3b58cd215cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7786388175515529641
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,11 +386,11 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.14747654
+  - screenRelativeHeight: 0.14597037
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7786388175513358891}
-  - screenRelativeHeight: 0.05241651
+  - screenRelativeHeight: 0.051536735
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7786388175513369591}

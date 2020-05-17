@@ -15,11 +15,7 @@ public class Chekeador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("SpaceshipFighter_Spear"))
-        {
-            Debug.Log("encontrado");
-        }
-        else
+        if (!GameObject.Find("SpaceshipFighter_Spear"))
         {
             cuentaAtras -= Time.deltaTime;
         }
