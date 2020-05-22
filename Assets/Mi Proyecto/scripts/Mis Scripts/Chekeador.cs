@@ -9,7 +9,8 @@ public class Chekeador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Hace invisible el cursor mientras juegas
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
