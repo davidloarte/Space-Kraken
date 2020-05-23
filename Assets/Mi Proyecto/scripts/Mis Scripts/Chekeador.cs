@@ -22,6 +22,7 @@ public class Chekeador : MonoBehaviour
         }
         if (cuentaAtras <= 0 )
         {
+            Cursor.visible = true;
             SceneManager.LoadScene("Failed");
         }
     }

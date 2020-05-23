@@ -15,6 +15,7 @@ public class MenuPrincipal : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = true;
         menuAnim = Menu.GetComponent<Animator>();
         saberPanelAnim = SaberPanel.GetComponent<Animator>();
     }

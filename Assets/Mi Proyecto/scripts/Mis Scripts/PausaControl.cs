@@ -24,10 +24,12 @@ public class PausaControl : MonoBehaviour
             if (estaPausado)
             {
                 reanudar();
+                Cursor.visible = false;
             }
             else
             {
                 pausar();
+                Cursor.visible = true;
             }
         }
     }

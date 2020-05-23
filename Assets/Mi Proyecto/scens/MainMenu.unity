@@ -5372,15 +5372,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xA1Bienvenido cadete!\nCuando este sentado y colocado coja el control
-    de los mandos.\nAhora que por fin has aprendido el manejo b\xE1sico de nuestras
-    naves y armas, te damos la bienvenida al programa de formaci\xF3n de pilotos estelares.\nEsta
-    simulaci\xF3n te ayudar\xE1 a comprender los peligros a los que se enfrentan a
-    diario los miembros la flota estelar de la U.N.S.C.\nPeligros a los que si te
-    graduas tendr\xE1s que enfrentarte t\xFA tambi\xE9n en el futuro.\nEn esta simulac\xF3n
-    te pondremos al control completo de uno de nuestros m\xE1s avanzados cazas de
-    investigaci\xF3n. \nTu objetivo: encontrar y traer de vuelta la bandera que identificar\xE1s
-    f\xE1cilmente ah\xED afuera.\nMucha suerte.\n"
+  m_Text: "\xA1Bienvenido cadete!\nAhora que por fin has aprendido el manejo b\xE1sico
+    de nuestras naves y armas, te damos la bienvenida al programa de formaci\xF3n
+    de pilotos estelares.\nEsta simulaci\xF3n te ayudar\xE1 a comprender los peligros
+    a los que se enfrentan a diario los miembros la flota estelar de la U.N.S.C.\nPeligros
+    a los que si te grad\xFAas tendr\xE1s que enfrentarte t\xFA tambi\xE9n en el futuro.\r\nNi
+    que decir tiene que dependiendo de t\xFA resultado as\xED te evaluaremos.\r\nT\xFA
+    objetivo es  encontrar, recuperar y traer de vuelta a kyle, perdido en este campo
+    de asteroides antes de que se le fr\xEDan los circuitos.\nMucha suerte."
 --- !u!222 &676954841
 CanvasRenderer:
   m_ObjectHideFlags: 0
