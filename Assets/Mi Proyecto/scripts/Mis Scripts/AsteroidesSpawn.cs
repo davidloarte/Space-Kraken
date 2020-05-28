@@ -21,7 +21,7 @@ public class AsteroidesSpawn : MonoBehaviour
         }
 
         GameObject prefab2 = Resources.Load("asteroide2") as GameObject;
-        for (int i = 0; i <= 1000; i++)
+        for (int i = 0; i <= 750; i++)
         {
             GameObject asteroide3 = Instantiate(prefab2);
             asteroide3.transform.position = new Vector3(Random.Range(-1000.0f, 1000.0f), Random.Range(-800.0f, 800.0f), Random.Range(300.0f, 1900.0f));

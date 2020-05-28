@@ -15,8 +15,12 @@ public class MenuPrincipal : MonoBehaviour
     private Animator saberPanelAnim;
     private Animator dificultadAnim;
 
-    //tiene que ser publica y estatica para que la encuentre en controlador
+    //tienen que ser publicas y estaticas para que las encuentre en controlador
     public static float tiempo = 600f;
+    public static string nombre;
+
+    public Text texto;
+    public Text textoGanador;
     private void Awake()
     {
         Cursor.visible = true;
@@ -24,6 +28,7 @@ public class MenuPrincipal : MonoBehaviour
         saberPanelAnim = SaberPanel.GetComponent<Animator>();
         dificultadAnim = DificultadPanel.GetComponent<Animator>();
         DificultadPanel.SetActive(false);
+        //textoGanador.text = "El record lo tiene " + PlayerPrefs.GetString("Name") + " con " + PlayerPrefs.GetFloat("Highscore") + " segundos.";
     }
 
     public void SaberMas()
@@ -37,6 +42,8 @@ public class MenuPrincipal : MonoBehaviour
 
     public void PlayScene()
     {
+        nombre = texto.text;
+        Debug.Log(nombre);
         SceneManager.LoadScene("Main Scene");
     }
 

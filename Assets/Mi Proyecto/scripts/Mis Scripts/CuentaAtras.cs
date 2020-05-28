@@ -8,7 +8,7 @@ using System;
 public class CuentaAtras : MonoBehaviour
 {
     // en este script utilizamos doubles para poder realizar las divisiones y la funcion Math.Truncate
-    double horaActual = 0f;
+    public static double horaActual = 0f;
     double tiempoTotal;
     double minutosMostrar = 0;
     double segundosMostrar = 0f;
@@ -41,7 +41,7 @@ public class CuentaAtras : MonoBehaviour
         cuentaAtras.text = minutosMostrar.ToString("0") + ":" + segundosMostrar.ToString("0.0");
         //cuentaAtras.text = horaActual.ToString("0.0");
 
-        if (horaActual <= 100)
+        if (horaActual <= 180)
         {
             cuentaAtras.color = Color.red;
         }

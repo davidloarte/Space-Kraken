@@ -5,12 +5,15 @@ using UnityEngine;
 public class controlador : MonoBehaviour
 {
     public float tiempo;
-
     public static float tiempo2;
+
+    public string nombre;
+    public static string nombre2;
     // Start is called before the first frame update
     void Start()
     {
-        
+        nombre = MenuPrincipal.nombre;
+        nombre2 = nombre;
     }
 
     public void Awake()

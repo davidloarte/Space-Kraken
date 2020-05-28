@@ -14,6 +14,8 @@ public class MovimientoIndividualAsteroide : MonoBehaviour
 
     Vector3 posicion;
     Vector3 Aux;
+
+    Rigidbody asteroide;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,27 +30,38 @@ public class MovimientoIndividualAsteroide : MonoBehaviour
         //ancho = 5;
 
         posicion = transform.position;
+
+        asteroide = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        contador += Time.deltaTime * velocidad;
-
-        float x = Mathf.Cos(contador) * ancho;
-        //float Y = Mathf.Sin(contador) * alto;
-        float z = Mathf.Sin(contador) * largo;
-        //float z = 0;
         if (PausaControl.estaPausado == true)
-            //Debug.Log("Esta pausado");
+        {
+            asteroide.isKinematic = false;
+            Debug.Log("Esta pausado");
+        }
+        else
+        {
+            asteroide.isKinematic = true;
+            contador += Time.deltaTime * velocidad;
 
-        Aux = transform.position;
+            float x = Mathf.Cos(contador) * ancho;
+            //float Y = Mathf.Sin(contador) * alto;
+            float z = Mathf.Sin(contador) * largo;
+            //float z = 0;
 
-        Aux.x += x;
-        //Aux.y += Y;
-        Aux.z += z;
 
-        transform.position = Aux;
+            Aux = transform.position;
+
+            Aux.x += x;
+            //Aux.y += Y;
+            Aux.z += z;
+
+            transform.position = Aux;
+        }
+        
 
     }
 }
