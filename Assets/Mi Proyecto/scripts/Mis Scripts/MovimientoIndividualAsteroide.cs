@@ -39,6 +39,8 @@ public class MovimientoIndividualAsteroide : MonoBehaviour
         //float Y = Mathf.Sin(contador) * alto;
         float z = Mathf.Sin(contador) * largo;
         //float z = 0;
+        if (PausaControl.estaPausado == true)
+            //Debug.Log("Esta pausado");
 
         Aux = transform.position;
 

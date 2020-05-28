@@ -10,17 +10,15 @@ public class PickCoin : MonoBehaviour
     public float volumen;
     private Transform posicionSonido;
 
+    public GameObject halo;
     public Collider bandera;
     public Collider nave;
     // Start is called before the first frame update
     void Start()
     {
         posicionSonido = transform;
-        //bandera = GetComponent<Collider>();
-        //nave = GetComponent<Collider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -41,5 +39,18 @@ public class PickCoin : MonoBehaviour
             //Debug.Log("has ganado");
             SceneManager.LoadScene("Ganar");
         }
+
+        if (collision.gameObject.tag == "potenciador")
+        {
+            Physics.IgnoreCollision(nave.GetComponent<Collider>(), bandera.GetComponent<Collider>());
+            Destroy(collision.gameObject);
+           
+            Debug.Log("potenciador");
+            halo.SetActive(true);
+            //halo.GetType().GetProperty("Size").SetValue(halo, 2f + Mathf.Sin(Time.time), null);
+
+            AudioSource.PlayClipAtPoint(sonidoMoneda, posicionSonido.position, volumen * 1);
+        }
+
     }
 }

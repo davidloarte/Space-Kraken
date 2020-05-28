@@ -9,15 +9,21 @@ public class MenuPrincipal : MonoBehaviour
 {
     public GameObject Menu;
     public GameObject SaberPanel;
+    public GameObject DificultadPanel;
 
     private Animator menuAnim;
     private Animator saberPanelAnim;
+    private Animator dificultadAnim;
 
+    //tiene que ser publica y estatica para que la encuentre en controlador
+    public static float tiempo = 600f;
     private void Awake()
     {
         Cursor.visible = true;
         menuAnim = Menu.GetComponent<Animator>();
         saberPanelAnim = SaberPanel.GetComponent<Animator>();
+        dificultadAnim = DificultadPanel.GetComponent<Animator>();
+        DificultadPanel.SetActive(false);
     }
 
     public void SaberMas()
@@ -42,5 +48,29 @@ public class MenuPrincipal : MonoBehaviour
     public void Inicio()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Dificultad()
+    {
+        DificultadPanel.SetActive(true);
+
+        menuAnim.SetBool("Close", true);
+        dificultadAnim.SetBool("Open", true);
+
+    }
+
+    public void facil()
+    {
+        tiempo = 600f;      
+    }
+
+    public void medio()
+    {
+        tiempo = 480f;
+    }
+
+    public void dificil()
+    {
+        tiempo = 360f;
     }
 }

@@ -49,7 +49,7 @@ public class PausaControl : MonoBehaviour
     {
         menuPausaUI.SetActive(true);
         Time.timeScale = 0f;
-        estaPausado = false;
+        estaPausado = true;
     }
 
     public void CargarMenu()

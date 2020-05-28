@@ -9,16 +9,24 @@ public class CuentaAtras : MonoBehaviour
 {
     // en este script utilizamos doubles para poder realizar las divisiones y la funcion Math.Truncate
     double horaActual = 0f;
-    double tiempoTotal = 600f;
+    double tiempoTotal;
     double minutosMostrar = 0;
     double segundosMostrar = 0f;
+
+    MenuPrincipal menu;
 
     [SerializeField] Text cuentaAtras;
 
     // Start is called before the first frame update
     void Start()
     {
+        // cogemos los valores de tiempo total que se han selecionado en el menu de dificultad
+        tiempoTotal = controlador.tiempo2;
+        if (tiempoTotal == 0)
+            tiempoTotal = 600f;
+
         horaActual = tiempoTotal;
+
     }
 
     // Update is called once per frame

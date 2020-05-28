@@ -49,7 +49,7 @@ public class Orbita1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tiempo += Time.deltaTime * VelocidadRotacion * 2;
+        tiempo += Time.deltaTime * VelocidadRotacion ;
         Rotar();
 
     }

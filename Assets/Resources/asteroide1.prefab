@@ -240,10 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dca25888668f184aae0ae2a3a83e038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ejeX: 1
+  ejeX: 0
   ejeY: 0
-  ejeZ: 0
-  agujasDeReloj: 0
+  ejeZ: 1
+  agujasDeReloj: 1
 --- !u!1 &2215673744292468248
 GameObject:
   m_ObjectHideFlags: 0
