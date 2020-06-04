@@ -17,6 +17,8 @@ public class CuentaAtras : MonoBehaviour
 
     [SerializeField] Text cuentaAtras;
 
+    public GameObject mirilla;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,8 @@ public class CuentaAtras : MonoBehaviour
             tiempoTotal = 600f;
 
         horaActual = tiempoTotal;
-
+        mirilla.SetActive(true);
+      
     }
 
     // Update is called once per frame

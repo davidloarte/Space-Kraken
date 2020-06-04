@@ -9,6 +9,7 @@ public class PausaControl : MonoBehaviour
     public static bool estaPausado = false;
 
     public GameObject menuPausaUI;
+    public GameObject mirilla;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class PausaControl : MonoBehaviour
             else
             {
                 pausar();
-                Cursor.visible = true;
+                Cursor.visible = true;   
             }
         }
     }
@@ -43,6 +44,7 @@ public class PausaControl : MonoBehaviour
         // Con esta funcion tambien se pueden hacer camaras lentas
         Time.timeScale = 1f;
         estaPausado = false;
+        mirilla.SetActive(true);
     }
 
     private void pausar()
@@ -50,6 +52,7 @@ public class PausaControl : MonoBehaviour
         menuPausaUI.SetActive(true);
         Time.timeScale = 0f;
         estaPausado = true;
+        mirilla.SetActive(false);
     }
 
     public void CargarMenu()

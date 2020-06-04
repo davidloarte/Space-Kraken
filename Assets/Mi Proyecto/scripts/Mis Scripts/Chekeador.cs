@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Chekeador : MonoBehaviour
 {
-    double score = 0;
-    string name = "";
+    
 
     public float cuentaAtras = 2.0f;
     // Start is called before the first frame update
@@ -21,14 +20,7 @@ public class Chekeador : MonoBehaviour
     {
         if (!GameObject.Find("SpaceshipFighter_Spear"))
         {
-            score = CuentaAtras.horaActual;
-            name = controlador.nombre2;
-            if (PlayerPrefs.GetFloat("Highscore") > score)
-            {
-                PlayerPrefs.SetFloat("Highscore", ToSingle(score));
-                PlayerPrefs.SetString("Name", name);
-                Debug.Log("nombre: " + name + " score: " + score);
-            }
+            
             cuentaAtras -= Time.deltaTime;
 
         }
@@ -38,9 +30,5 @@ public class Chekeador : MonoBehaviour
             SceneManager.LoadScene("Failed");
         }
     }
-    // funcion para convertir de double a float
-    public static float ToSingle(double value)
-    {
-        return (float)value;
-    }
+    
 }

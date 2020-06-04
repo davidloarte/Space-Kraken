@@ -14,6 +14,10 @@ public class PickCoin : MonoBehaviour
     public Collider bandera;
     public Collider nave;
     // Start is called before the first frame update
+
+    double score = 0;
+    string name = "";
+
     void Start()
     {
         posicionSonido = transform;
@@ -36,7 +40,16 @@ public class PickCoin : MonoBehaviour
 
         if (collision.gameObject.tag == "base" && contador > 0)
         {
-            //Debug.Log("has ganado");
+            score = 600.0f - CuentaAtras.horaActual;
+            name = controlador.nombre2;
+            //Debug.Log("he llegado aqui y he encontrado nombre: " + name + " score: " + score);
+            if (PlayerPrefs.GetFloat("Highscore") > score || PlayerPrefs.GetFloat("Highscore") == 0)
+            {
+                Debug.Log("ahora he encontrdo que no hay nada mejor en hihgscore");
+                PlayerPrefs.SetFloat("Highscore", ToSingle(score));
+                PlayerPrefs.SetString("Name", name);
+                //Debug.Log("encontrado nombre: " + name + " score: " + score);
+            }
             SceneManager.LoadScene("Ganar");
         }
 
@@ -44,13 +57,16 @@ public class PickCoin : MonoBehaviour
         {
             Physics.IgnoreCollision(nave.GetComponent<Collider>(), bandera.GetComponent<Collider>());
             Destroy(collision.gameObject);
-           
-            Debug.Log("potenciador");
-            halo.SetActive(true);
-            //halo.GetType().GetProperty("Size").SetValue(halo, 2f + Mathf.Sin(Time.time), null);
 
+            halo.SetActive(true);
             AudioSource.PlayClipAtPoint(sonidoMoneda, posicionSonido.position, volumen * 1);
         }
 
+    }
+
+    // funcion para convertir de double a float
+    public static float ToSingle(double value)
+    {
+        return (float)value;
     }
 }

@@ -26,5 +26,10 @@ public class controlador : MonoBehaviour
         tiempo = MenuPrincipal.tiempo;
         tiempo2 = tiempo;
         Debug.Log(tiempo.ToString());
+
+        nombre = MenuPrincipal.nombre;
+        nombre2 = nombre;
+        Debug.Log("el nombre es : " + nombre);
+
     }
 }

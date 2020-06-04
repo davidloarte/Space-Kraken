@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MovimientoIndividualAsteroide : MonoBehaviour
 {
-
     private float contador = 0;
 
     private float velocidad;
@@ -23,11 +22,6 @@ public class MovimientoIndividualAsteroide : MonoBehaviour
         alto = Random.Range(0.0f, 1.0f);
         largo = Random.Range(0.0f, 1.0f);
         ancho = Random.Range(0.0f, 1.0f);
-
-        //velocidad = 5;
-        //alto = 5;
-        //largo = 5;
-        //ancho = 5;
 
         posicion = transform.position;
 

@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - naveCapital
   - potenciador
+  - mirilla
+  - joystick
   layers:
   - Default
   - TransparentFX

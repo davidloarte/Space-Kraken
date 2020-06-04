@@ -14,8 +14,26 @@ public class ShipMovementV2 : MonoBehaviour
     public float velocidadRotacionVertical = 1f;
 
     public bool InvertirEjes = false;
+    public bool paraAndroid = false;
+
+    public Joystick joystick;
+    public GameObject joy;
+
+    public Joystick joystick2;
+    public GameObject joy2;
     void Start()
     {
+        if (paraAndroid)
+        {
+            joy.SetActive(true);
+            joy2.SetActive(true);
+        }     
+        else
+        {
+            joy.SetActive(false);
+            joy2.SetActive(false);
+        }
+           
         rb = GetComponent<Rigidbody>();
     }
 
@@ -25,17 +43,32 @@ public class ShipMovementV2 : MonoBehaviour
         float moverHorizontal = 0;
         float moverVertical = 0;
 
-        if (!InvertirEjes) 
+        if (paraAndroid)
         {
-            moverHorizontal = Input.GetAxis("Horizontal");
-            moverVertical = Input.GetAxis("Vertical");
+            if (!InvertirEjes)
+            {
+                moverHorizontal = joystick.Horizontal;
+                moverVertical = joystick.Vertical;
+            }
+            if (InvertirEjes)
+            {
+                moverHorizontal = -joystick.Horizontal;
+                moverVertical = -joystick.Vertical;
+            }
         }
-        if (InvertirEjes)
+        else
         {
-            moverHorizontal = -Input.GetAxis("Horizontal");
-            moverVertical = -Input.GetAxis("Vertical");
+            if (!InvertirEjes)
+            {
+                moverHorizontal = Input.GetAxis("Horizontal");
+                moverVertical = Input.GetAxis("Vertical");
+            }
+            if (InvertirEjes)
+            {
+                moverHorizontal = -Input.GetAxis("Horizontal");
+                moverVertical = -Input.GetAxis("Vertical");
+            }
         }
-
 
 
         if (rb.velocity.magnitude > velocidadMax)
@@ -59,17 +92,24 @@ public class ShipMovementV2 : MonoBehaviour
         float h = 0;
         float v = 0;
 
-        if (InvertirEjes)
+        if (paraAndroid)
         {
-            h = velocidadRotacionHorizontal * Input.GetAxis("Mouse X") * 2;
-            v = velocidadRotacionVertical * (Input.GetAxis("Mouse Y") * 2);
+            h = velocidadRotacionHorizontal * joystick2.Horizontal;
+            v = velocidadRotacionVertical * joystick2.Vertical;
         }
-       if (!InvertirEjes)
+        else
         {
-            h = velocidadRotacionHorizontal * Input.GetAxis("Mouse X") * 2;
-            v = velocidadRotacionVertical * -(Input.GetAxis("Mouse Y") * 2);
+            if (InvertirEjes)
+            {
+                h = velocidadRotacionHorizontal * Input.GetAxis("Mouse X");
+                v = velocidadRotacionVertical * (Input.GetAxis("Mouse Y"));
+            }
+            if (!InvertirEjes)
+            {
+                h = velocidadRotacionHorizontal * Input.GetAxis("Mouse X");
+                v = velocidadRotacionVertical * -(Input.GetAxis("Mouse Y"));
+            }
         }
-
         transform.Rotate(v, h, 0);
         
         if (!InvertirEjes) {
@@ -86,31 +126,6 @@ public class ShipMovementV2 : MonoBehaviour
             if (Input.GetKey(KeyCode.Q))
                 transform.Rotate(new Vector3(0, 0, -velocidadRotar));
         }
-        
-
-        //if (Input.GetAxis("Mouse X") > 0) 
-        //{ 
-        //    Quaternion.AngleAxis(Input.GetAxis("Mouse X") * 2, Vector3.up);
-
-        //}
-
-        //if (Input.GetAxis("Mouse X") < 0)
-        //{ 
-        //    rb.AddTorque(transform.right * 1f, ForceMode.Force);
-
-        //}
-
-        ////descarto poner el eje z porque no se puede mover el mouse en el
-        //distancia = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * 2, Vector3.up) /** Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * 2, Vector3.forward) */* distancia;
-        ////distancia = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * 2, Vector3.forward) * distancia;
-        ////distancia = Quaternion.AngleAxis(Input.GetAxis("Mouse Z") * 2, Vector3.right) * distancia;
-
-        //transform.position = jugador.transform.position + distancia;
-        //transform.LookAt(jugador.transform.position);
-
-        //// Usamos referencia para que nuestros controles no varien
-        ////Vector3 copiaRotacion = new Vector3(0, transform.eulerAngles.y, 0);
-        //Vector3 copiaRotacion = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
-        //referencia.transform.eulerAngles = copiaRotacion;
+      
     }
 }

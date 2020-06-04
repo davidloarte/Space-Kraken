@@ -53,9 +53,6 @@ public class shipcollition : MonoBehaviour
 
             // Hacemos que suene la explosion
             AudioSource.PlayClipAtPoint(sonidoExplosion, posicionSonido.position, volumen * 10000000);
-
-            //SceneManager.LoadScene("Failed");
-            //StartCoroutine(Cuenta());
         }
     }
 

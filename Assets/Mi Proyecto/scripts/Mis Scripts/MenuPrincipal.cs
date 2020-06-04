@@ -21,6 +21,7 @@ public class MenuPrincipal : MonoBehaviour
 
     public Text texto;
     public Text textoGanador;
+
     private void Awake()
     {
         Cursor.visible = true;
@@ -28,7 +29,17 @@ public class MenuPrincipal : MonoBehaviour
         saberPanelAnim = SaberPanel.GetComponent<Animator>();
         dificultadAnim = DificultadPanel.GetComponent<Animator>();
         DificultadPanel.SetActive(false);
-        //textoGanador.text = "El record lo tiene " + PlayerPrefs.GetString("Name") + " con " + PlayerPrefs.GetFloat("Highscore") + " segundos.";
+
+        //Importante : estas dos lineas hay que comentarlas para que funcione bien el score
+        //PlayerPrefs.SetFloat(("Highscore"), 600);
+        //PlayerPrefs.SetString(("Highscore"), "");
+
+        if (PlayerPrefs.GetFloat("Highscore") > 600 || PlayerPrefs.GetFloat("Highscore") <= 0)
+            PlayerPrefs.SetFloat(("Highscore"), 600);
+       
+        if (PlayerPrefs.GetFloat("Highscore") > 0 && PlayerPrefs.GetFloat("Highscore") < 600)
+            //Debug.Log(pruebaNombre + " AAA " + pruebaScore);
+            textoGanador.text = "El record lo tiene " + PlayerPrefs.GetString("Name").Trim().ToUpper() + " con " + PlayerPrefs.GetFloat("Highscore") + " segundos.";
     }
 
     public void SaberMas()
@@ -43,7 +54,8 @@ public class MenuPrincipal : MonoBehaviour
     public void PlayScene()
     {
         nombre = texto.text;
-        Debug.Log(nombre);
+        if (nombre == null || nombre == "")
+            nombre = "Kyle";
         SceneManager.LoadScene("Main Scene");
     }
 
