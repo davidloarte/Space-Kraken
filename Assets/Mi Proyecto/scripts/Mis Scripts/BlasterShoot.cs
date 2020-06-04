@@ -27,7 +27,7 @@ public class BlasterShoot : MonoBehaviour
     void Update()
     {
         // Fire 1 es el boton que tiene asignado unity por defecto al boton izquierdo del rato
-        if ((Input.GetButton("Fire1") || Input.GetKeyDown(KeyCode.T)) && (Time.time > inicioDisparar && !paraAndroid))
+        if (Input.GetButton("Fire1") && (Time.time > inicioDisparar && !paraAndroid))
         {
             dispara();
         }

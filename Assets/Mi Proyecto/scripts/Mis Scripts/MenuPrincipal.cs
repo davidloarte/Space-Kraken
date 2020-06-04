@@ -32,7 +32,7 @@ public class MenuPrincipal : MonoBehaviour
 
         //Importante : estas dos lineas hay que comentarlas para que funcione bien el score
         //PlayerPrefs.SetFloat(("Highscore"), 600);
-        //PlayerPrefs.SetString(("Highscore"), "");
+        //PlayerPrefs.SetString(("Name"), "");
 
         if (PlayerPrefs.GetFloat("Highscore") > 600 || PlayerPrefs.GetFloat("Highscore") <= 0)
             PlayerPrefs.SetFloat(("Highscore"), 600);

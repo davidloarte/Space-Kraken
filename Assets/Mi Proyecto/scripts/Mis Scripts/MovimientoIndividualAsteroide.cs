@@ -15,6 +15,8 @@ public class MovimientoIndividualAsteroide : MonoBehaviour
     Vector3 Aux;
 
     Rigidbody asteroide;
+
+    public bool movNormal = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,22 +40,44 @@ public class MovimientoIndividualAsteroide : MonoBehaviour
         }
         else
         {
-            asteroide.isKinematic = true;
-            contador += Time.deltaTime * velocidad;
+            if (movNormal)
+            {
+                asteroide.isKinematic = true;
+                contador += Time.deltaTime * velocidad;
 
-            float x = Mathf.Cos(contador) * ancho;
-            //float Y = Mathf.Sin(contador) * alto;
-            float z = Mathf.Sin(contador) * largo;
-            //float z = 0;
+                float x = Mathf.Cos(contador) * ancho;
+                //float Y = Mathf.Sin(contador) * alto;
+                float z = Mathf.Sin(contador) * largo;
+                //float z = 0;
 
 
-            Aux = transform.position;
+                Aux = transform.position;
 
-            Aux.x += x;
-            //Aux.y += Y;
-            Aux.z += z;
+                Aux.x += x;
+                //Aux.y += Y;
+                Aux.z += z;
 
-            transform.position = Aux;
+                transform.position = Aux;
+            }
+            else
+            {
+                asteroide.isKinematic = true;
+                contador += Time.deltaTime * velocidad;
+
+                float x = Mathf.Cos(contador) * ancho;
+                float Y = Mathf.Sin(contador) * alto;
+                float z = Mathf.Sin(contador) * largo;
+                //float z = 0;
+
+
+                Aux = transform.position;
+
+                Aux.x += x;
+                Aux.y += Y;
+                Aux.z += z;
+
+                transform.position = Aux;
+            }
         }
         
 
