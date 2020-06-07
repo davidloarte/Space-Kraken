@@ -65,5 +65,4 @@ public class AsteroidesSpawn : MonoBehaviour
         }
 
     }
-
 }

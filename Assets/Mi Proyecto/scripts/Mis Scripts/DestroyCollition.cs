@@ -16,11 +16,6 @@ public class DestroyCollition : MonoBehaviour
     {
         posicionSonido = transform;
     }
-    void Update()
-    {
-
-    }
-
     // Funcion que detecta las colisiones en los objetos
     private void OnCollisionEnter(Collision collision)
     {

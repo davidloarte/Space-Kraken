@@ -22,15 +22,7 @@ public class shipcollition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (haExplotado)
-        //{
-        //    Debug.Log(haExplotado);
-        //    cuentaAtras -= Time.deltaTime;
-        //    if (cuentaAtras < 0)
-        //    {
-        //        SceneManager.LoadScene("Failed");
-        //    }
-        //}
+       
     }
 
     private void OnCollisionEnter(Collision collision)

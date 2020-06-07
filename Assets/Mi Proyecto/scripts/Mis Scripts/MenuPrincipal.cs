@@ -31,6 +31,7 @@ public class MenuPrincipal : MonoBehaviour
         DificultadPanel.SetActive(false);
 
         //Importante : estas dos lineas hay que comentarlas para que funcione bien el score
+        //Sirven para resetear el score
         //PlayerPrefs.SetFloat(("Highscore"), 600);
         //PlayerPrefs.SetString(("Name"), "");
 
